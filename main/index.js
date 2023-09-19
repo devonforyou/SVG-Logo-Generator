@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const { Circle, Square, Triangle } = require('./lib/shapes');
 
+//prompt for user for logo specifications
 async function input() {
     const questions = await inquirer.prompt([
         {
@@ -28,7 +29,8 @@ async function input() {
     ]);
     return questions;
     }
-
+    
+// function to create the logo and create an svg file of logo
 async function generateLogo() {
     const questions = await input();
     const {text, textColor, shape, shapeColor } = questions;
