@@ -18,7 +18,7 @@ async function userInput() {
             type: 'list',
             name: 'shape',
             message: 'Select a shape: ',
-            choices: ['Cirlce', 'Square', 'Triangle'],
+            choices: ['Circle', 'Square', 'Triangle'],
         },
         {
             type: 'input',
@@ -55,6 +55,7 @@ async function generateLogo() {
       <text x="${x}" y="${y}" font-family="Calibri" font-weight="bold" font-size="24" fill="${textColor}" text-anchor="middle" alignment-baseline="middle">${text}</text>
     </svg>
   `;
+
   fs.writeFileSync('logo.svg', logo);
   console.log('SVG logo created');
 }
