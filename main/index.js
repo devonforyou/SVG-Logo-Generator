@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const { Circle, Square, Triangle } = require('./lib/shapes');
 
-async function userInput() {
+async function input() {
     const questions = await inquirer.prompt([
         {
             type: 'input',
@@ -30,7 +30,7 @@ async function userInput() {
     }
 
 async function generateLogo() {
-    const userInput = await userInput();
+    const questions = await input();
     const {text, textColor, shape, shapeColor } = questions;
 
     const chosenShape = new(eval(shape))();
@@ -51,7 +51,7 @@ async function generateLogo() {
 
       const logo = `
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      ${selectedShape.render()}
+      ${chosenShape.render()}
       <text x="${x}" y="${y}" font-family="Calibri" font-weight="bold" font-size="24" fill="${textColor}" text-anchor="middle" alignment-baseline="middle">${text}</text>
     </svg>
   `;

@@ -30,4 +30,4 @@ class Shape {
     }
   }
   
-  module.export = { Circle, Square, Triangle}
+  module.exports = { Circle, Square, Triangle}
